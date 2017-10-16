@@ -56,11 +56,6 @@ void SelectCar() {
 void main(void) {
 	//setlocale(LC_ALL, "Rus"); /* Обязательно должно быть первым */
 	::SetConsoleOutputCP(1251);
-	::SetConsoleCP(1251);
-
-	const CCar myCA;
-	myCA.CreateACar();
-	myCA.DisplayCarStats();
-
+	::SetConsoleCP(1251);	
 	SelectCar();
 }

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Auto.h"
+#include "CarSecond.h"
 
 
 //////////////////////////////////////////////////////////////////////
@@ -7,17 +7,17 @@
 //////////////////////////////////////////////////////////////////////
 
 //CCar::CCar() :m_currSpeed(0), m_maxSpeed(0) {
-CCar::CCar() {
+CarSecound::CarSecound() {
 	m_currSpeed = 0;
 	m_maxSpeed = 0;
 	m_drivePower = 0;
 	strcpy_s(m_petName, "");
 	cout << "************************************" << endl;
-	cout << "Автомобиль в объектной модели Car" << endl;
+	cout << "Автомобиль в объектной модели CarSecound" << endl;
 	cout << "************************************" << endl;
 }
 
-CCar::~CCar() {
+CarSecound::~CarSecound() {
 	// Пока ничего не надо ...
 }
 
@@ -25,7 +25,7 @@ CCar::~CCar() {
 // Методы
 //////////////////////////////////////////////////////////////////////
 
-void CCar::DisplayCarStats() const { // Отобразить характеристики автомобиля.
+void CarSecound::DisplayCarStats() const { // Отобразить характеристики автомобиля.
 	cout << "***********************************" << endl;
 	cout << "Ваш автомобиль называется: " << m_petName << endl;
 	cout << "Его максимальная скорость: " << m_maxSpeed << endl;
@@ -33,47 +33,47 @@ void CCar::DisplayCarStats() const { // Отобразить характеристики автомобиля.
 	cout << "***********************************" << endl << endl;
 }
 
-void CCar::CreateACar() { // Создать модель автомобиля
-	char  buffer[MAX_LENGTH << 2];
-	TSpeed  spd = 0;
+void CarSecound::CreateACar() { // Создать модель автомобиля
+	char  buffer[MAX_LENGTH_S << 2];
+	int  spd = 0;
 	int  pwr = 0;
 	// Ввести правильно имя автомобиля.
 	do {
 		cout << endl << "Пожалуйста введите имя автомобиля: " << flush;
 		gets_s(buffer);   // Ввод строки.
-	} while (strlen(buffer) >= MAX_LENGTH);
+	} while (strlen(buffer) >= MAX_LENGTH_S);
 	strcpy_s(m_petName, buffer);
 	// Ввести правильно максимальную скорость.
 	do {
 		cout << "Введите max скорость для данной модели: " << flush;
 		cin >> spd;
-	} while (spd > MAX_SPEED);
+	} while (spd > MAX_SPEED_S);
 	do {
 		cout << "Введите мощность двигателя для данной модели: " << flush;
 		cin >> pwr;
 		cout << endl;
-	} while (pwr > MAX_POWER);
+	} while (pwr > MAX_POWER_S);
 	m_maxSpeed = spd;
 	m_drivePower = pwr;
 }
 
-void CCar::AddSpeed() { // Нарастить скорость.
+void CarSecound::AddSpeed() { // Нарастить скорость.
 	if (m_currSpeed <= m_maxSpeed) {
-		m_currSpeed += (TSpeed)m_drivePower*0.03;
+		m_currSpeed += m_drivePower*0.03;
 		cout << "Скорость есть: " << m_currSpeed << endl;
 	}
 }
-void CCar::RemoveSpeed() { // Уменьшить скорость.
+void CarSecound::RemoveSpeed() { // Уменьшить скорость.
 	if (m_currSpeed <= m_maxSpeed) {
-		m_currSpeed -= (TSpeed)m_drivePower*0.03;
+		m_currSpeed -= m_drivePower*0.03;
 		cout << "Скорость есть: " << m_currSpeed << endl;
 	}
 }
-void CCar::StopCar() { // Уменьшить скорость.
-	m_currSpeed =0;
+void CarSecound::StopCar() { // Уменьшить скорость.
+	m_currSpeed = 0;
 	cout << "Скорость есть: " << m_currSpeed << endl;
 }
-void CCar::AskToStopCar() {
+void CarSecound::AskToStopCar() {
 	if (m_currSpeed > 0.7*m_maxSpeed && m_currSpeed < m_maxSpeed) {
 		cout << "Подходим к предельному значению скорости. Хотете остановиться?(y/n): " << endl;
 		switch (_getch())
@@ -87,14 +87,14 @@ void CCar::AskToStopCar() {
 	}
 }
 
-void CCar::ChangeSpeed() { // Изменение скорости.
-	cout << "Увеличить или уменьшить скорость?(y/n): "<< endl;
-		switch (_getch())
-		{
-		case 'y':
-			AddSpeed(); break;
-		case 'n':
-			RemoveSpeed(); break;
-		default: cout << "Неправильный ввод!" <<endl; break;
-		}
+void CarSecound::ChangeSpeed() { // Изменение скорости.
+	cout << "Увеличить или уменьшить скорость?(y/n): " << endl;
+	switch (_getch())
+	{
+	case 'y':
+		AddSpeed(); break;
+	case 'n':
+		RemoveSpeed(); break;
+	default: cout << "Неправильный ввод!" << endl; break;
+	}
 }

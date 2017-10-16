@@ -1,20 +1,20 @@
 #pragma once
-const  int MAX_LENGTH = 32;
-const  int MAX_SPEED = 400;
-const  int MAX_POWER = 700;
+const  int MAX_LENGTH_S = 32;
+const  int MAX_SPEED_S = 400;
+const  int MAX_POWER_S = 700;
 
-typedef double TSpeed;
+typedef int TSpeed;
 
-class CCar {
+class CarSecound {
 public:
-	CCar();
-	~CCar();  // virtual 
+	CarSecound();
+	~CarSecound();  // virtual 
 			  // Открытый интерфейс класса.
 	void  DisplayCarStats() const;
 
 	void ChangeSpeed();
 	void AskToStopCar();
-	
+
 	TSpeed  GetCurrSpeed() const { return m_currSpeed; }
 	TSpeed  GetMaxSpeed() const { return m_maxSpeed; }
 	int  GetDriveSpeed() const { return m_drivePower; }
@@ -26,7 +26,7 @@ private:
 	void StopCar();
 private:
 	// Скрытые данные.
-	char  m_petName[MAX_LENGTH];
+	char  m_petName[MAX_LENGTH_S];
 	TSpeed  m_maxSpeed;
 	TSpeed  m_currSpeed;
 	int m_drivePower;

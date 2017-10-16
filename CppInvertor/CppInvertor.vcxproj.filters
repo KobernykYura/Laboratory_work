@@ -21,10 +21,10 @@
     <ClInclude Include="stdafx.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Auto.h">
+    <ClInclude Include="targetver.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CarSecond.h">
+    <ClInclude Include="Invertor.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,13 +32,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CppTamplate.cpp">
+    <ClCompile Include="CppInvertor.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Auto.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="CarSecond.cpp">
+    <ClCompile Include="Invertor.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
